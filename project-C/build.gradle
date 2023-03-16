@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'maven-publish'
+apply plugin: "java-library"
+
+publishing {
+    publications {
+        // $USER_HOME/.m2/repository
+        maven(MavenPublication) {
+            from components.java
+
+            groupId = project.group
+            artifactId = project.name
+            version = project.version
+        }
+    }
+}

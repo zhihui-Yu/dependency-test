@@ -1,0 +1,5 @@
+rootProject.name = 'dependency-test'
+include 'project-A'
+include 'project-B'
+include 'project-C'
+
